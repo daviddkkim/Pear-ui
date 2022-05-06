@@ -1,15 +1,34 @@
 import * as React from "react";
 import { styled } from "@hazy/core";
-import Link from "next/link";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useState } from "react";
+
 const StyledList = styled("ul", {
   listStyleType: "none",
   margin: 0,
   padding: 0,
+  display: "flex",
+  flexDirection: "column",
+
+  rowGap: "$2",
 });
 
 const StyledListItem = styled("li", {
   margin: 0,
   display: "flex",
+  position: "relative",
+  borderLeft: "2px solid transparent",
+  variants: {
+    state: {
+      active: {
+        fontWeight: "500",
+        borderLeft: "3px solid $mauve12",
+        background: "linear-gradient(120deg, $mauve8, $mauve5)",
+        transition: "all 250ms ease",
+      },
+      default: {},
+    },
+  },
 });
 
 const StyledNav = styled("nav", {
@@ -36,14 +55,36 @@ const StyledLink = styled("a", {
   textDecoration: "none",
   color: "$mauve12",
   width: "100%",
-  padding: "$2 $4",
-  borderRadius: "6px",
+  padding: "$1 $4",
+
   "&:hover": {
     backgroundColor: "$mauve6",
   },
 });
 
 export function SideNav() {
+  const router = useRouter();
+  console.log("nav");
+  const [active, setActive] = useState("");
+
+  const determineActive = useCallback(
+    (url: string) => {
+      if (router.asPath.includes("buttons")) {
+        return "buttons";
+      } else if (router.asPath.includes("dropdowns")) {
+        return "dropdowns";
+      } else if (router.asPath.includes("charts")) {
+        return "charts";
+      }
+      return "";
+    },
+    [router.asPath]
+  );
+
+  useEffect(() => {
+    const activeItem = determineActive(router.asPath);
+    setActive(activeItem);
+  }, [router.asPath, determineActive]);
   return (
     <StyledNav>
       <StyledHeader>Hazy DS</StyledHeader>
@@ -51,14 +92,20 @@ export function SideNav() {
         <StyledListItem>
           <StyledSectionHeader>Components</StyledSectionHeader>
         </StyledListItem>
-        <StyledListItem>
-          <StyledLink href={"/button"}>Button</StyledLink>
+        <StyledListItem
+          state={active.includes("buttons") ? "active" : "default"}
+        >
+          <StyledLink href={"/buttons"}>Button</StyledLink>
         </StyledListItem>
-        <StyledListItem>
-          <StyledLink href={"/dropdown"}>Dropdown</StyledLink>
+        <StyledListItem
+          state={active.includes("dropdowns") ? "active" : "default"}
+        >
+          <StyledLink href={"/dropdowns"}>Dropdown</StyledLink>
         </StyledListItem>
-        <StyledListItem>
-          <StyledLink href={"/chart"}>Chart</StyledLink>
+        <StyledListItem
+          state={active.includes("charts") ? "active" : "default"}
+        >
+          <StyledLink href={"/charts"}>Chart</StyledLink>
         </StyledListItem>
       </StyledList>
     </StyledNav>
