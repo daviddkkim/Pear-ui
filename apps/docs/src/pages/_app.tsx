@@ -2,7 +2,7 @@ import { styled } from "@hazy/core";
 import { useIsomorphicLayoutEffect } from "@hazy/utils";
 import { SideNav } from "../components/sideNav";
 import { globalCss } from "@hazy/core";
-import type AppProps from "next/app";
+import { AppProps } from 'next/app';
 
 const globalStyles = globalCss({
   html: {
