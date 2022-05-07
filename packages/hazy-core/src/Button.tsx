@@ -18,15 +18,19 @@ const StyledButton = styled("button", {
     color: {
       primary: {
         background: "linear-gradient(120deg, $mauve12, $violet12)",
-        border: "none",
+        border: "1px solid $colors$mauveA1",
         color: "$mauve1",
+        boxShadow: "1px 1px 1px $colors$mauveA4",
+
         "&:hover": {
           background: "linear-gradient(120deg, $mauve12, $violet11)",
         },
       },
       secondary: {
         backgroundColor: "$mauve1",
-        border: "1px solid $colors$mauve12",
+        border: "1px solid $colors$mauve10",
+        color: "$violet12",
+        boxShadow: "1px 1px 1px $colors$mauveA4",
         "&:hover": {
           backgroundColor: "$mauve4",
         },
@@ -34,6 +38,7 @@ const StyledButton = styled("button", {
       ghost: {
         backgroundColor: "$mauve1",
         border: "1px solid transparent",
+        color: "$violet12",
         "&:hover": {
           backgroundColor: "$mauve4",
         },

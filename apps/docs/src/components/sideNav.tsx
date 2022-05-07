@@ -70,6 +70,8 @@ export function SideNav() {
     (url: string) => {
       if (router.asPath.includes("buttons")) {
         return "buttons";
+      } else if (router.asPath.includes("buttonGroups")) {
+        return "buttonGroups";
       } else if (router.asPath.includes("dropdowns")) {
         return "dropdowns";
       } else if (router.asPath.includes("charts")) {
@@ -98,6 +100,11 @@ export function SideNav() {
           state={active.includes("buttons") ? "active" : "default"}
         >
           <StyledLink href={"/buttons"}>Button</StyledLink>
+        </StyledListItem>
+        <StyledListItem
+          state={active.includes("buttonGroups") ? "active" : "default"}
+        >
+          <StyledLink href={"/buttonGroups"}>ButtonGroup</StyledLink>
         </StyledListItem>
         <StyledListItem
           state={active.includes("dropdowns") ? "active" : "default"}
