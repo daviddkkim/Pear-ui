@@ -47,8 +47,7 @@ const StyledHeader = styled("h4", {
 const StyledSectionHeader = styled("h4", {
   fontWeight: "500",
   paddingLeft: "$4",
-  margin: 0,
-  marginBottom: "$2",
+  margin: "$2 0",
 });
 
 const StyledLink = styled("a", {
@@ -89,6 +88,9 @@ export function SideNav() {
     <StyledNav>
       <StyledHeader>Hazy DS</StyledHeader>
       <StyledList>
+        <StyledListItem state={active === "" ? "active" : "default"}>
+          <StyledLink href={"/"}>Getting Started</StyledLink>
+        </StyledListItem>
         <StyledListItem>
           <StyledSectionHeader>Components</StyledSectionHeader>
         </StyledListItem>

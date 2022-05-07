@@ -7,7 +7,8 @@ const Home: NextPage = () => {
   return (
     <div>
       <h1>hazy Documentation</h1>
-      <div>Getting Started</div>
+      <p>Getting Started</p>
+      <code> npm install @hazy/core</code>
     </div>
   );
 };

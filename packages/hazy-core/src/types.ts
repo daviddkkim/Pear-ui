@@ -1,6 +1,11 @@
 export enum ButtonSize {
-  ExtraSmall = "xs",
-  Small = "sm",
-  Medium = "md",
-  Large = "lg",
+  small = "small",
+  medium = "medium",
+  large = "large",
+}
+
+export enum ButtonColor {
+  primary = "primary",
+  secondary = "secondary",
+  ghost = "ghost",
 }
