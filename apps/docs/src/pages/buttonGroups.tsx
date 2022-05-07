@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ButtonGroup, Button, styled } from "@hazy/core";
+import { ButtonGroup, Button, styled, ButtonGroupSpacing } from "@hazy/core";
 import {
   useView,
   Compiler,
@@ -26,31 +26,22 @@ const ButtonGroups: NextPage = () => {
         type: PropTypes.ReactNode,
         description: "Visible label.",
       },
-      onClick: {
-        value: '() => alert("click")',
-        type: PropTypes.Function,
-        description: "Function called when button is clicked.",
-      },
-      disabled: {
-        value: false,
-        type: PropTypes.Boolean,
-        description: "Indicates that the button is disabled",
-      },
-      /*  size: {
-        value: ButtonSize.medium,
-        defaultValue: ButtonSize.medium,
+      spacing: {
+        value: ButtonGroupSpacing.medium,
+        defaultValue: ButtonGroupSpacing.medium,
         type: PropTypes.Enum,
-        options: ButtonSize,
-        description: "Defines the size of the buttons",
-      }, */
+        options: ButtonGroupSpacing,
+        description: "Defines the spacing between the buttons",
+      },
     },
     scope: {
       ButtonGroup,
       Button,
+      ButtonGroupSpacing,
     },
     imports: {
       "@hazy/core": {
-        named: ["ButtonGroup", "Button"],
+        named: ["ButtonGroup", "Button", "ButtonGroupSpacing"],
       },
     },
   });

@@ -9,3 +9,10 @@ export enum ButtonColor {
   secondary = "secondary",
   ghost = "ghost",
 }
+
+export enum ButtonGroupSpacing {
+  none = "none",
+  small = "small",
+  medium = "medium",
+  large = "large",
+}
