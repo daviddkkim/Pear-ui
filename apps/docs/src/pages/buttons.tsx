@@ -13,9 +13,7 @@ import {
 
 const Box = styled("div", {
   display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  border: "1px solid black",
+  flexDirection: "column",
 });
 
 const Buttons: NextPage = () => {
@@ -63,23 +61,21 @@ const Buttons: NextPage = () => {
     },
   });
   return (
-    <div>
+    <Box css={{ maxWidth: "720px", width: "100%" }}>
       <h1>hazy Documentation</h1>
-      <div>
-        <Box>
-          <Compiler
-            {...params.compilerProps}
-            minHeight={62}
-            placeholder={Placeholder}
-          />
-        </Box>
-        <Error msg={params.errorProps.msg} isPopup />
-        <Knobs {...params.knobProps} />
-        <Editor {...params.editorProps} />
-        <Error {...params.errorProps} />
-        <ActionButtons {...params.actions} />
-      </div>
-    </div>
+      <Box css={{ border: "1px solid $mauve8", borderRadius: "6px" }}>
+        <Compiler
+          {...params.compilerProps}
+          minHeight={62}
+          placeholder={Placeholder}
+        />
+      </Box>
+      <Error msg={params.errorProps.msg} isPopup />
+      <Knobs {...params.knobProps} />
+      <Editor {...params.editorProps} />
+      <Error {...params.errorProps} />
+      <ActionButtons {...params.actions} />
+    </Box>
   );
 };
 export default Buttons;

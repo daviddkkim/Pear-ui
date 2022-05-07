@@ -17,11 +17,11 @@ const StyledButton = styled("button", {
   variants: {
     color: {
       primary: {
-        background: "linear-gradient(145deg, $indigo10, $mauve9)",
+        background: "linear-gradient(120deg, $mauve12, $violet12)",
         border: "none",
         color: "$mauve1",
         "&:hover": {
-          background: "linear-gradient(120deg, $indigo9, $mauve8)",
+          background: "linear-gradient(120deg, $mauve12, $violet11)",
         },
       },
       secondary: {
@@ -42,12 +42,15 @@ const StyledButton = styled("button", {
     size: {
       small: {
         padding: "$1 $2",
+        fontSize: "$2",
       },
       medium: {
         padding: "$2 $3",
+        fontSize: "$3",
       },
       large: {
         padding: "$3 $4",
+        fontSize: "$4",
       },
     },
     disabledStyle: {
