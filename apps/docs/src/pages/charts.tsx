@@ -2,12 +2,12 @@ import type { NextPage } from "next";
 
 import { Button, styled } from "@hazy/core";
 import { View, PropTypes } from "react-view";
-
+import { LineChart } from "@hazy/charts";
 const Charts: NextPage = () => {
   return (
     <div>
       <h1>hazy Documentation</h1>
-      <View
+      {/* <View
         componentName="Button"
         props={{
           children: {
@@ -34,7 +34,8 @@ const Charts: NextPage = () => {
             named: ["Button"],
           },
         }}
-      />
+      /> */}
+      <LineChart></LineChart>
     </div>
   );
 };
