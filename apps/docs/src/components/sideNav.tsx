@@ -63,7 +63,9 @@ const StyledLink = styled("a", {
 
 export function SideNav() {
   const router = useRouter();
-  console.log("nav");
+
+
+  //just initialize with actual value rather than empty
   const [active, setActive] = useState("");
 
   const determineActive = useCallback(
