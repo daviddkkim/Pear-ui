@@ -63,11 +63,6 @@ const StyledLink = styled("a", {
 
 export function SideNav() {
   const router = useRouter();
-
-
-  //just initialize with actual value rather than empty
-  const [active, setActive] = useState("");
-
   const determineActive = useCallback(
     (url: string) => {
       if (router.asPath.includes("buttons")) {
@@ -84,10 +79,13 @@ export function SideNav() {
     [router.asPath]
   );
 
-  useEffect(() => {
+  //just initialize with actual value rather than empty
+  const [active, setActive] = useState(determineActive(router.asPath));
+
+  /* useEffect(() => {
     const activeItem = determineActive(router.asPath);
     setActive(activeItem);
-  }, [router.asPath, determineActive]);
+  }, [router.asPath, determineActive]); */
   return (
     <StyledNav>
       <StyledHeader>Hazy DS</StyledHeader>
