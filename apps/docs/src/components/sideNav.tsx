@@ -82,10 +82,7 @@ export function SideNav() {
   //just initialize with actual value rather than empty
   const [active, setActive] = useState(determineActive(router.asPath));
 
-  /* useEffect(() => {
-    const activeItem = determineActive(router.asPath);
-    setActive(activeItem);
-  }, [router.asPath, determineActive]); */
+
   return (
     <StyledNav>
       <StyledHeader>Hazy DS</StyledHeader>
