@@ -33,6 +33,13 @@ const ButtonGroups: NextPage = () => {
         options: ButtonGroupSpacing,
         description: "Defines the spacing between the buttons",
       },
+      segmented: {
+        value: false,
+        defaultValue: false,
+        type: PropTypes.Boolean,
+        options: Boolean,
+        description: "Defines the segmentation type of buttons",
+      },
     },
     scope: {
       ButtonGroup,
