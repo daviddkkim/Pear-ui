@@ -37,8 +37,8 @@ const ButtonGroups: NextPage = () => {
         value: false,
         defaultValue: false,
         type: PropTypes.Boolean,
-        options: Boolean,
-        description: "Defines the segmentation type of buttons",
+        options: Boolean, 
+        description: "Defines the form factor of button group",
       },
     },
     scope: {
