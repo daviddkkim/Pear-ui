@@ -4,7 +4,6 @@ import { ButtonGroupSpacing } from "./types";
 
 export interface ButtonGroupProps {
   children: React.ReactNode;
-  segmented?: boolean;
   spacing?: ButtonGroupSpacing;
 }
 const ButtonGroupContainer = styled("div", {
@@ -40,7 +39,6 @@ const ButtonGroupContainer = styled("div", {
 });
 export function ButtonGroup({
   children,
-  segmented = false,
   spacing = ButtonGroupSpacing.medium,
 }: ButtonGroupProps) {
   return (
