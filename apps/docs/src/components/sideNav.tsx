@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled } from "@hazy/core";
+import { styled, keyframes } from "@hazy/core";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 
@@ -13,18 +13,36 @@ const StyledList = styled("ul", {
   rowGap: "$2",
 });
 
+const SlideAnimation = keyframes({
+  "100%": {
+    transform: "translateX(0px)",
+  },
+});
+
 const StyledListItem = styled("li", {
   margin: 0,
   display: "flex",
   position: "relative",
   borderLeft: "2px solid transparent",
+  "&:after": {
+    content: "' '",
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+
+    transform: "translateX(-150%)",
+    transition: "all 150ms ease",
+  },
   variants: {
     state: {
       active: {
         fontWeight: "500",
-        borderLeft: "3px solid $mauve12",
-        background: "linear-gradient(120deg, $mauve8, $mauve5)",
         transition: "all 250ms ease",
+        "&:after": {
+          background: "linear-gradient(120deg, $mauveA8, $mauveA5)",
+          borderLeft: "3px solid $mauve12",
+          animation: `${SlideAnimation} ease 150ms forwards`,
+        },
       },
       default: {},
     },
@@ -81,7 +99,6 @@ export function SideNav() {
 
   //just initialize with actual value rather than empty
   const [active, setActive] = useState(determineActive(router.asPath));
-
 
   return (
     <StyledNav>
