@@ -10,6 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {
+    "@hazy/chart": "*",
     "@hazy/core": "*",
     "@hazy/utils": "*",
     "next": "^12.0.8",
