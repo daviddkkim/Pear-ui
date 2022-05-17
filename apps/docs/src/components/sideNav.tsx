@@ -68,12 +68,12 @@ const StyledSectionHeader = styled("h4", {
   margin: "$2 0",
 });
 
-const StyledLink = styled("a", {
+const StyledLink = styled("div", {
   textDecoration: "none",
   color: "$mauve12",
   width: "100%",
   padding: "$1 $4",
-
+  cursor:'pointer',
   "&:hover": {
     backgroundColor: "$mauve6",
   },
@@ -99,13 +99,22 @@ export function SideNav() {
 
   //just initialize with actual value rather than empty
   const [active, setActive] = useState(determineActive(router.asPath));
+  useEffect(() => {
+    setActive(determineActive(router.asPath));
+  }, [determineActive, router.asPath]);
 
   return (
     <StyledNav>
       <StyledHeader>Hazy DS</StyledHeader>
       <StyledList>
         <StyledListItem state={active === "" ? "active" : "default"}>
-          <StyledLink href={"/"}>Getting Started</StyledLink>
+          <StyledLink
+            onClick={() => {
+              router.push("/");
+            }}
+          >
+            Getting Started
+          </StyledLink>
         </StyledListItem>
         <StyledListItem>
           <StyledSectionHeader>Components</StyledSectionHeader>
@@ -113,22 +122,46 @@ export function SideNav() {
         <StyledListItem
           state={active.includes("buttons") ? "active" : "default"}
         >
-          <StyledLink href={"/buttons"}>Button</StyledLink>
+          <StyledLink
+            onClick={() => {
+              router.push("/buttons");
+            }}
+          >
+            Button
+          </StyledLink>
         </StyledListItem>
         <StyledListItem
           state={active.includes("buttonGroups") ? "active" : "default"}
         >
-          <StyledLink href={"/buttonGroups"}>ButtonGroup</StyledLink>
+          <StyledLink
+            onClick={() => {
+              router.push("/buttonGroups");
+            }}
+          >
+            ButtonGroup
+          </StyledLink>
         </StyledListItem>
         <StyledListItem
           state={active.includes("dropdowns") ? "active" : "default"}
         >
-          <StyledLink href={"/dropdowns"}>Dropdown</StyledLink>
+          <StyledLink
+            onClick={() => {
+              router.push("/dropdowns");
+            }}
+          >
+            Dropdown
+          </StyledLink>
         </StyledListItem>
         <StyledListItem
           state={active.includes("charts") ? "active" : "default"}
         >
-          <StyledLink href={"/charts"}>Chart</StyledLink>
+          <StyledLink
+            onClick={() => {
+              router.push("/charts");
+            }}
+          >
+            Chart
+          </StyledLink>
         </StyledListItem>
       </StyledList>
     </StyledNav>
