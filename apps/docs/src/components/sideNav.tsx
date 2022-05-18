@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, keyframes } from "@hazy/core";
+import { styled, keyframes } from "@pear-ui/core";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 

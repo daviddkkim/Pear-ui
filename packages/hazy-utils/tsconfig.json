@@ -1,5 +1,5 @@
 {
-  "extends": "@hazy/tsconfig/react-library.json",
+  "extends": "@pear-ui/tsconfig/react-library.json",
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Button, styled } from "@hazy/core";
+import { Button, styled } from "@pear-ui/core";
 import { View, PropTypes } from "react-view";
 
 const Home: NextPage = () => {
@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <main>
         <h1>hazy Documentation</h1>
         <p>Getting Started</p>
-        <code> npm install @hazy/core</code>
+        <code> npm install @pear-ui/core</code>
       </main>
     </div>
   );

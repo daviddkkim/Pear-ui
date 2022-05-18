@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-import { Button, styled } from "@hazy/core";
+import { Button, styled } from "@pear-ui/core";
 import { View, PropTypes } from "react-view";
-import { LineChart } from "@hazy/charts";
+import { LineChart } from "@pear-ui/charts";
 const Charts: NextPage = () => {
   return (
     <div>

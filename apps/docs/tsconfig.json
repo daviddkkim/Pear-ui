@@ -1,6 +1,6 @@
 {
   "exclude": ["node_modules"],
-  "extends": "@hazy/tsconfig/nextjs.json",
+  "extends": "@pear-ui/tsconfig/nextjs.json",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",

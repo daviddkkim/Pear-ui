@@ -9,9 +9,9 @@ This Turborepo includes the following packages and apps:
 ### Apps and Packages
 
 - `docs`: A placeholder documentation site powered by [Next.js](https://nextjs.org)
-- `@hazy/core`: core React components
-- `@hazy/utils`: shared React utilities
-- `@hazy/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
+- `@pear-ui/core`: core React components
+- `@pear-ui/utils`: shared React utilities
+- `@pear-ui/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
 - `eslint-config-hazy`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
@@ -37,7 +37,7 @@ git init . && git add . && git commit -m "Init"
 
 ### Changing the npm organization scope
 
-The npm organization scope for this design system starter is `@hazy`. To change this, it's a bit manual at the moment, but you'll need to do the following:
+The npm organization scope for this design system starter is `@pear-ui`. To change this, it's a bit manual at the moment, but you'll need to do the following:
 
 - Rename folders in `packages/*` to replace `hazy` with your desired scope
 - Search and replace `hazy` with your desired scope

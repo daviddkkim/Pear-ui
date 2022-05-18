@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Button, ButtonSize, ButtonColor, styled } from "@hazy/core";
+import { Button, ButtonSize, ButtonColor, styled } from "@pear-ui/core";
 import {
   useView,
   Compiler,
@@ -55,7 +55,7 @@ const Buttons: NextPage = () => {
       ButtonSize,
     },
     imports: {
-      "@hazy/core": {
+      "@pear-ui/core": {
         named: ["Button"],
       },
     },

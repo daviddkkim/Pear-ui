@@ -1,7 +1,7 @@
-import { styled } from "@hazy/core";
-import { useIsomorphicLayoutEffect } from "@hazy/utils";
+import { styled } from "@pear-ui/core";
+import { useIsomorphicLayoutEffect } from "@pear-ui/utils";
 import { SideNav } from "../components/sideNav";
-import { globalCss } from "@hazy/core";
+import { globalCss } from "@pear-ui/core";
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 

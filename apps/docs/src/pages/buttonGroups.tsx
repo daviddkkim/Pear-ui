@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { ButtonGroup, Button, styled, ButtonGroupSpacing } from "@hazy/core";
+import { ButtonGroup, Button, styled, ButtonGroupSpacing } from "@pear-ui/core";
 import {
   useView,
   Compiler,
@@ -40,7 +40,7 @@ const ButtonGroups: NextPage = () => {
       ButtonGroupSpacing,
     },
     imports: {
-      "@hazy/core": {
+      "@pear-ui/core": {
         named: ["ButtonGroup", "Button", "ButtonGroupSpacing"],
       },
     },

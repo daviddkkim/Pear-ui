@@ -1,5 +1,5 @@
 {
-  "name": "@hazy/docs",
+  "name": "@pear-ui/docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,16 +10,16 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf .next"
   },
   "dependencies": {
-    "@hazy/charts": "*",
-    "@hazy/core": "*",
-    "@hazy/utils": "*",
+    "@pear-ui/charts": "*",
+    "@pear-ui/core": "*",
+    "@pear-ui/utils": "*",
     "next": "^12.0.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-view": "^2.3.7"
   },
   "devDependencies": {
-    "@hazy/tsconfig": "*",
+    "@pear-ui/tsconfig": "*",
     "@types/node": "^17.0.12",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
