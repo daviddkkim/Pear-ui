@@ -24,16 +24,6 @@ This turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-## Using this example
-
-We do not have a starter yet in `create-turbo` for this quite yet. If you want to use this in the interim, you run the following command:
-
-```sh
-npx degit vercel/turborepo/examples/design-system design-system
-cd design-system
-yarn install
-git init . && git add . && git commit -m "Init"
-```
 
 ### Changing the npm organization scope
 
@@ -55,6 +45,21 @@ To publish packages to a private npm organization scope, **remove** the followin
 - "publishConfig": {
 -  "access": "public"
 - },
+```
+
+
+### publishing
+This repo publishes using changeset: https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md
+
+Once you decide you want to do a release, you can run
+```
+yarn changeset version
+```
+
+and then
+
+```
+npx changeset publish
 ```
 
 #### GitHub Package Registry
