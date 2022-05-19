@@ -87,8 +87,8 @@ export function SideNav() {
         return "buttons";
       } else if (router.asPath.includes("buttonGroups")) {
         return "buttonGroups";
-      } else if (router.asPath.includes("dropdowns")) {
-        return "dropdowns";
+      } else if (router.asPath.includes("sidenav")) {
+        return "sidenav";
       } else if (router.asPath.includes("charts")) {
         return "charts";
       }
@@ -142,14 +142,14 @@ export function SideNav() {
           </StyledLink>
         </StyledListItem>
         <StyledListItem
-          state={active.includes("dropdowns") ? "active" : "default"}
+          state={active.includes("sidenav") ? "active" : "default"}
         >
           <StyledLink
             onClick={() => {
-              router.push("/dropdowns");
+              router.push("/sidenav");
             }}
           >
-            Dropdown
+            SideNav
           </StyledLink>
         </StyledListItem>
         <StyledListItem
