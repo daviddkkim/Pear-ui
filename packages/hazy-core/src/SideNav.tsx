@@ -6,6 +6,7 @@ import { styled } from "../stitches.config";
  * -----------------------------------------------------------------------------------------------*/
 export interface SideNavProps {
   children: React.ReactNode;
+  title: React.ReactNode;
   style?: React.CSSProperties;
 }
 
@@ -20,7 +21,12 @@ const StyledNav = styled("nav", {
   padding: "$6 $4",
 });
 
-export function SideNav({ children, style }: SideNavProps) {
+const StyledTitle = styled("div", {
+  marginBottom: "$2",
+  padding: '0 $4'
+});
+
+export function SideNav({ children, style, title }: SideNavProps) {
   return (
     <StyledNav
       role="menu"
@@ -28,6 +34,7 @@ export function SideNav({ children, style }: SideNavProps) {
       aria-label="Sidebar"
       style={style}
     >
+      <StyledTitle>{title}</StyledTitle>
       {children}
     </StyledNav>
   );
@@ -58,7 +65,7 @@ const StyledListHeader = styled("h4", {
   margin: 0,
   padding: "$2 $4",
   fontWeight: 400,
-  color: "$mauve11",
+  color: "$mauve10",
 });
 export function SideNavList({ children, style, title }: SidenavListProps) {
   const listHeader = title ? (
@@ -100,6 +107,7 @@ const NavLink = styled("a", {
   color: "$mauve11",
   transition: "all 150ms ease",
   borderRadius: "4px",
+  fontWeight: '500',
   "&:hover": {
     backgroundColor: "$mauve5",
     boxShadow: "1px 1px 1px $colors$mauveA5",
@@ -107,7 +115,7 @@ const NavLink = styled("a", {
       color: "$mauve12",
     },
   },
-  "&:focus": {
+  "&:focus-visible": {
     border: "1px solid $mauve12",
   },
   variants: {

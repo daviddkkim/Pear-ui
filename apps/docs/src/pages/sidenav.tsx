@@ -17,6 +17,7 @@ import {
   Placeholder,
   PropTypes,
 } from "react-view";
+import { useRouter } from "next/router";
 
 const Box = styled("div", {
   display: "flex",
@@ -33,15 +34,47 @@ const StyledPieChartIcon = styled(PieChartIcon, {
 const StyledGearIcon = styled(GearIcon, {
   size: "$4",
 });
+
+const TitleContainer = styled("div", {
+  display: "flex",
+  columnGap: "$3",
+  alignItems: "center",
+  borderRadius: "4px",
+});
+
+const StyledTitle = styled("h1", {
+  margin: 0,
+  padding: 0,
+});
+const ColorBox = styled("div", {
+  size: "$5",
+  background: "linear-gradient(100deg, $mauve12, $violet11)",
+});
+
 const SideNavs: NextPage = () => {
+  const Title = () => {
+    return (
+      <TitleContainer>
+        <ColorBox />
+        <StyledTitle>Pear-ui</StyledTitle>
+      </TitleContainer>
+    );
+  };
+
+  const router = useRouter();
   const params = useView({
     componentName: "SideNav",
     props: {
       children: {
         value:
-          "<SideNavList title={'Demo'}> <SideNavListItem to={'/buttons'} active icon={<StyledHomeIcon/>}>  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} icon={<StyledPieChartIcon/>}>  Item1  </SideNavListItem>  <SideNavListItem to={'/buttonGroups'} icon={<StyledGearIcon/>}>  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} indented>  Item1  </SideNavListItem></SideNavList> <SideNavList title={'Demo'}> <SideNavListItem to={'/buttons'} >  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} >  Item1  </SideNavListItem>  <SideNavListItem to={'/buttonGroups'} >  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'}>  Item1  </SideNavListItem></SideNavList> ",
+          "<SideNavList title={'Demo (Router Push)'}> <SideNavListItem onClick={(e)=> {e.preventDefault(); router.push('/buttons')}} to={'/buttons'} active icon={<StyledHomeIcon/>}>  Item1  </SideNavListItem> <SideNavListItem  onClick={(e)=> {e.preventDefault();router.push('/buttonGroups')}} to={'/buttonGroups'} icon={<StyledPieChartIcon/>}>  Item1  </SideNavListItem>  <SideNavListItem  onClick={(e)=> {e.preventDefault();router.push('/buttonGroups')}} to={'/buttonGroups'} icon={<StyledGearIcon/>}>  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} indented>  Item1  </SideNavListItem></SideNavList> <SideNavList title={'Demo (Anchor Tag)'}> <SideNavListItem  to={'/buttons'} >  Item1  </SideNavListItem> <SideNavListItem  to={'/buttons'} >  Item1  </SideNavListItem>  <SideNavListItem to={'/buttonGroups'} >  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'}>  Item1  </SideNavListItem></SideNavList> ",
         type: PropTypes.ReactNode,
         description: "Visible label.",
+      },
+      title: {
+        value: "<Title/>",
+        type: PropTypes.ReactNode,
+        description: "title",
       },
     },
     scope: {
@@ -51,6 +84,8 @@ const SideNavs: NextPage = () => {
       StyledHomeIcon,
       StyledPieChartIcon,
       StyledGearIcon,
+      router,
+      Title
     },
     imports: {
       "@pear-ui/core": {

@@ -1,6 +1,7 @@
 import { styled } from "@pear-ui/core";
 import { useIsomorphicLayoutEffect } from "@pear-ui/utils";
 import { SideNav } from "../components/sideNav";
+import { SideNavBar } from "../components/sideNavBar";
 import { globalCss } from "@pear-ui/core";
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
@@ -52,7 +53,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <Container>
-      <SideNav></SideNav>
+      <SideNavBar></SideNavBar>
       <Component {...pageProps} />
     </Container>
   );
