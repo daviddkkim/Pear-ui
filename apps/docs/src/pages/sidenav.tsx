@@ -1,5 +1,12 @@
 import type { NextPage } from "next";
-import { SideNav, SideNavList, SideNavListItem, styled } from "@pear-ui/core";
+import {
+  SideNav,
+  SideNavList,
+  SideNavListItem,
+  styled,
+  Button,
+} from "@pear-ui/core";
+import { HomeIcon, PieChartIcon, GearIcon } from "@radix-ui/react-icons";
 import {
   useView,
   Compiler,
@@ -16,12 +23,23 @@ const Box = styled("div", {
   flexDirection: "column",
 });
 
+const StyledHomeIcon = styled(HomeIcon, {
+  size: "$4",
+});
+const StyledPieChartIcon = styled(PieChartIcon, {
+  size: "$4",
+});
+
+const StyledGearIcon = styled(GearIcon, {
+  size: "$4",
+});
 const SideNavs: NextPage = () => {
   const params = useView({
     componentName: "SideNav",
     props: {
       children: {
-        value: "<SideNavList title={'Demo'}> <SideNavListItem> Item1 </SideNavListItem> <SideNavListItem> Item2 </SideNavListItem> <SideNavListItem> Item3 </SideNavListItem></SideNavList>",
+        value:
+          "<SideNavList title={'Demo'}> <SideNavListItem to={'/buttons'} active icon={<StyledHomeIcon/>}>  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} icon={<StyledPieChartIcon/>}>  Item1  </SideNavListItem>  <SideNavListItem to={'/buttonGroups'} icon={<StyledGearIcon/>}>  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} indented>  Item1  </SideNavListItem></SideNavList> <SideNavList title={'Demo'}> <SideNavListItem to={'/buttons'} >  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'} >  Item1  </SideNavListItem>  <SideNavListItem to={'/buttonGroups'} >  Item1  </SideNavListItem> <SideNavListItem to={'/buttonGroups'}>  Item1  </SideNavListItem></SideNavList> ",
         type: PropTypes.ReactNode,
         description: "Visible label.",
       },
@@ -30,10 +48,15 @@ const SideNavs: NextPage = () => {
       SideNav,
       SideNavList,
       SideNavListItem,
+      StyledHomeIcon,
+      StyledPieChartIcon,
+      StyledGearIcon,
     },
     imports: {
       "@pear-ui/core": {
-        named: ["SideNav, SideNavList, SideNavListItem"],
+        named: [
+          "SideNav, SideNavList, SideNavListItem, StyledHomeIcon, StyledPieChartIcon,StyledGearIcon",
+        ],
       },
     },
   });
