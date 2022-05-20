@@ -6,9 +6,25 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 export interface DialogProps {
   children: React.ReactNode;
 }
+const StyledOverlay = styled(DialogPrimitive.Overlay, {
+  backgroundColor: "$mauveA8",
+  position: "fixed",
+  inset: 0,
+});
 
+const StyledContent = styled(DialogPrimitive.Content, {
+    
+})
 export function DialogContent({ children }: DialogProps) {
-  return <div>{children}</div>;
+  return (
+    <DialogPrimitive.Portal>
+      <StyledOverlay />
+      <DialogPrimitive.Content>
+        {children}
+        <DialogPrimitive.Close>close</DialogPrimitive.Close>
+      </DialogPrimitive.Content>
+    </DialogPrimitive.Portal>
+  );
 }
 
 export const Dialog = DialogPrimitive.Dialog;
