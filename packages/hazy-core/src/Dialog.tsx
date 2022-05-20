@@ -5,6 +5,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 
 export interface DialogProps {
   children: React.ReactNode;
+  headerSlot?: React.ReactNode;
 }
 const StyledOverlay = styled(DialogPrimitive.Overlay, {
   backgroundColor: "$mauveA8",
@@ -13,21 +14,45 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 });
 
 const StyledContent = styled(DialogPrimitive.Content, {
-    
-})
-export function DialogContent({ children }: DialogProps) {
+  backgroundColor: "$mauve1",
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  width: "100%",
+  maxWidth: "600px",
+  maxHeight: "75vh",
+  height: "100%",
+  transform: "translate(-50%, -50%)",
+  border: "1px solid $mauve5",
+  borderRadius: "$2",
+  boxShadow: "1px 1px 10px $colors$mauveA5, 1px 1px 5px $colors$mauveA4",
+  padding: "$4",
+  display: "flex",
+  flexDirection: "column",
+  rowGap: "$4",
+});
+
+const StyledTitle = styled(DialogPrimitive.Title, {
+  margin: 0,
+  fontSize: "$4",
+});
+
+const Box = styled("div", {});
+
+export function DialogContent({ children, headerSlot }: DialogProps) {
   return (
     <DialogPrimitive.Portal>
       <StyledOverlay />
-      <DialogPrimitive.Content>
+      <StyledContent>
+        {headerSlot && headerSlot}
         {children}
-        <DialogPrimitive.Close>close</DialogPrimitive.Close>
-      </DialogPrimitive.Content>
+      </StyledContent>
     </DialogPrimitive.Portal>
   );
 }
 
 export const Dialog = DialogPrimitive.Dialog;
 export const DialogTrigger = DialogPrimitive.Trigger;
-
+export const DialogClose = DialogPrimitive.Close;
+export const DialogTitle = StyledTitle;
 DialogContent.displayName = "DialogContent";

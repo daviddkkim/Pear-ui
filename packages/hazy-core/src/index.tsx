@@ -11,6 +11,8 @@ export {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogClose,
+  DialogTitle,
   type DialogProps,
 } from "./Dialog";
 export { ButtonGroup, type ButtonGroupProps } from "./ButtonGroups";
