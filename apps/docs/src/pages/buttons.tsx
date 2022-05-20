@@ -63,7 +63,7 @@ const Buttons: NextPage = () => {
   return (
     <Box css={{ maxWidth: "720px", width: "100%" }}>
       <h1>hazy Documentation</h1>
-      <Box css={{ border: "1px solid $mauve8", borderRadius: "6px" }}>
+      <Box css={{ border: "1px solid $mauve8", borderRadius: "4px" }}>
         <Compiler
           {...params.compilerProps}
           minHeight={62}

@@ -18,10 +18,10 @@ const ButtonGroupContainer = styled("div", {
           borderRight: "none",
         },
         ":first-child": {
-          borderRadius: "6px 0 0 6px",
+          borderRadius: "$2 0 0 $2",
         },
         ":last-child": {
-          borderRadius: "0 6px 6px 0",
+          borderRadius: "0 $2 $2 0",
           borderRight: "1px solid $mauve10",
         },
       },

@@ -11,8 +11,7 @@ export interface SideNavProps {
 }
 
 const StyledNav = styled("nav", {
-  height: "calc(100% - 64 px)",
-  width: "200px",
+  minWidth: "200px",
   display: "flex",
   flexDirection: "column",
   rowGap: "$3",
@@ -23,7 +22,7 @@ const StyledNav = styled("nav", {
 
 const StyledTitle = styled("div", {
   marginBottom: "$2",
-  padding: '0 $4'
+  padding: "0 $4",
 });
 
 export function SideNav({ children, style, title }: SideNavProps) {
@@ -106,8 +105,8 @@ const NavLink = styled("a", {
   border: "1px solid transparent",
   color: "$mauve11",
   transition: "all 150ms ease",
-  borderRadius: "4px",
-  fontWeight: '500',
+  borderRadius: "$2",
+  fontWeight: "500",
   "&:hover": {
     backgroundColor: "$mauve5",
     boxShadow: "1px 1px 1px $colors$mauveA5",

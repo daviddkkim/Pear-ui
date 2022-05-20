@@ -13,7 +13,6 @@ const TitleContainer = styled("div", {
   display: "flex",
   columnGap: "$3",
   alignItems: "center",
-  borderRadius: "4px",
 });
 
 const StyledTitle = styled("h1", {
@@ -23,6 +22,7 @@ const StyledTitle = styled("h1", {
 const ColorBox = styled("div", {
   size: "$5",
   background: "linear-gradient(100deg, $mauve12, $violet11)",
+  borderRadius: "$2",
 });
 
 export function SideNavBar() {

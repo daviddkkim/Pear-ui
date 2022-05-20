@@ -14,7 +14,7 @@ export interface ButtonProps {
 
 const StyledButton = styled("button", {
   transition: "all 150ms ease",
-  borderRadius: "$1",
+  borderRadius: "$2",
   variants: {
     color: {
       primary: {

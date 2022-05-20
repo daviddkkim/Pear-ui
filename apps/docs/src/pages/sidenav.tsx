@@ -39,7 +39,6 @@ const TitleContainer = styled("div", {
   display: "flex",
   columnGap: "$3",
   alignItems: "center",
-  borderRadius: "4px",
 });
 
 const StyledTitle = styled("h1", {
