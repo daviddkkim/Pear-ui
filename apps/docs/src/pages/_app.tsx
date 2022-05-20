@@ -1,6 +1,4 @@
 import { styled } from "@pear-ui/core";
-import { useIsomorphicLayoutEffect } from "@pear-ui/utils";
-import { SideNav } from "../components/sideNav";
 import { SideNavBar } from "../components/sideNavBar";
 import { globalCss } from "@pear-ui/core";
 import { AppProps } from "next/app";
@@ -8,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const globalStyles = globalCss({
   html: {
-    overflowX: "hidden",
+    overflow: "hidden",
   },
 
   body: {
@@ -31,8 +29,18 @@ const globalStyles = globalCss({
 
 const Container = styled("div", {
   display: "flex",
-  minHeight: "100vh",
+  height: "100vh",
   columnGap: "$6",
+  paddingLeft: "240px",
+  overflow: "scroll",
+});
+
+const Box = styled("div", {
+  maxWidth: "720px",
+  width: "100%",
+  marginLeft: "$8",
+  marginRight: "auto",
+  height: "100%",
 });
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -54,7 +62,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Container>
       <SideNavBar></SideNavBar>
-      <Component {...pageProps} />
+      <Box>
+        <Component {...pageProps} />
+      </Box>
     </Container>
   );
 }

@@ -49,6 +49,9 @@ const ColorBox = styled("div", {
   size: "$5",
   background: "linear-gradient(100deg, $mauve12, $violet11)",
 });
+const Container = styled("div", {
+  paddingBottom: "$6",
+});
 
 const SideNavs: NextPage = () => {
   const Title = () => {
@@ -75,6 +78,11 @@ const SideNavs: NextPage = () => {
         type: PropTypes.ReactNode,
         description: "title",
       },
+      style: {
+        value: "{ position: 'absolute' }",
+        type: PropTypes.Object,
+        description: "style",
+      },
     },
     scope: {
       SideNav,
@@ -84,7 +92,7 @@ const SideNavs: NextPage = () => {
       StyledPieChartIcon,
       StyledGearIcon,
       router,
-      Title
+      Title,
     },
     imports: {
       "@pear-ui/core": {
@@ -95,12 +103,19 @@ const SideNavs: NextPage = () => {
     },
   });
   return (
-    <Box css={{ maxWidth: "720px", width: "100%" }}>
+    <Container>
       <h1>hazy Documentation</h1>
-      <Box css={{ border: "1px solid $mauve8", borderRadius: "6px" }}>
+      <Box
+        css={{
+          border: "1px solid $mauve8",
+          borderRadius: "6px",
+          position: "relative",
+          height: "100%",
+        }}
+      >
         <Compiler
           {...params.compilerProps}
-          minHeight={62}
+          minHeight={520}
           placeholder={Placeholder}
         />
       </Box>
@@ -109,7 +124,7 @@ const SideNavs: NextPage = () => {
       <Editor {...params.editorProps} />
       <Error {...params.errorProps} />
       <ActionButtons {...params.actions} />
-    </Box>
+    </Container>
   );
 };
 export default SideNavs;

@@ -11,13 +11,19 @@ export interface SideNavProps {
 }
 
 const StyledNav = styled("nav", {
-  minWidth: "200px",
+  minWidth: "240px",
   display: "flex",
   flexDirection: "column",
   rowGap: "$3",
   backgroundColor: "$mauve3",
   borderRight: "1px solid $mauve5",
   padding: "$6 $4",
+  position: "fixed",
+  left: 0,
+  top: 0,
+  bottom: 0,
+  zIndex: 1,
+  boxSizing: "border-box",
 });
 
 const StyledTitle = styled("div", {
@@ -51,7 +57,6 @@ export interface SidenavListProps {
 }
 const StyledNavList = styled("ul", {
   all: "unset",
-  height: "100%",
   width: "100%",
   display: "flex",
   flexDirection: "column",

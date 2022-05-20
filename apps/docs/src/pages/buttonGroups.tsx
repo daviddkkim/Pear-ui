@@ -16,6 +16,10 @@ const Box = styled("div", {
   flexDirection: "column",
 });
 
+const Container = styled("div", {
+  paddingBottom: "$6",
+});
+
 const ButtonGroups: NextPage = () => {
   const params = useView({
     componentName: "ButtonGroup",
@@ -46,7 +50,7 @@ const ButtonGroups: NextPage = () => {
     },
   });
   return (
-    <Box css={{ maxWidth: "720px", width: "100%" }}>
+    <Container>
       <h1>hazy Documentation</h1>
       <Box css={{ border: "1px solid $mauve8", borderRadius: "$2" }}>
         <Compiler
@@ -60,7 +64,7 @@ const ButtonGroups: NextPage = () => {
       <Editor {...params.editorProps} />
       <Error {...params.errorProps} />
       <ActionButtons {...params.actions} />
-    </Box>
+    </Container>
   );
 };
 export default ButtonGroups;
