@@ -16,3 +16,9 @@ export enum ButtonGroupSpacing {
   medium = "medium",
   large = "large",
 }
+
+export enum ButtonTextAlignment {
+  start = "start",
+  end = "end",
+  center = "center",
+}

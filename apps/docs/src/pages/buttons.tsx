@@ -1,5 +1,11 @@
 import type { NextPage } from "next";
-import { Button, ButtonSize, ButtonColor, styled } from "@pear-ui/core";
+import {
+  Button,
+  ButtonSize,
+  ButtonColor,
+  ButtonTextAlignment,
+  styled,
+} from "@pear-ui/core";
 import {
   useView,
   Compiler,
@@ -39,6 +45,11 @@ const Buttons: NextPage = () => {
         type: PropTypes.Boolean,
         description: "Indicates that the button is disabled",
       },
+      stretch: {
+        value: false,
+        type: PropTypes.Boolean,
+        description: "Indicates whether button stretches or fit to content",
+      },
       size: {
         value: ButtonSize.medium,
         defaultValue: ButtonSize.medium,
@@ -52,6 +63,13 @@ const Buttons: NextPage = () => {
         type: PropTypes.Enum,
         options: ButtonColor,
         description: "Defines the color of the buttons",
+      },
+      textAlign: {
+        value: ButtonTextAlignment.center,
+        defaultValue: ButtonTextAlignment.center,
+        type: PropTypes.Enum,
+        options: ButtonTextAlignment,
+        description: "text alignment of the button",
       },
     },
     scope: {

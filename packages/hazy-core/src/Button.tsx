@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ButtonColor, ButtonSize } from "./types";
+import { ButtonColor, ButtonSize, ButtonTextAlignment } from "./types";
 import { styled } from "../stitches.config";
 
 export interface ButtonProps {
@@ -9,6 +9,8 @@ export interface ButtonProps {
   style?: React.CSSProperties;
   size?: ButtonSize;
   color?: ButtonColor;
+  textAlign?: ButtonTextAlignment;
+  stretch?: boolean;
 }
 
 const StyledButton = styled("button", {
@@ -42,6 +44,25 @@ const StyledButton = styled("button", {
         "&:hover": {
           backgroundColor: "$mauve4",
         },
+      },
+    },
+    textAlign: {
+      start: {
+        textAlign: "start",
+      },
+      end: {
+        textAlign: "end",
+      },
+      center: {
+        textAlign: "center",
+      },
+    },
+    stretch: {
+      true: {
+        width: "100%",
+      },
+      false: {
+        width: "fit-content",
       },
     },
     size: {
@@ -82,6 +103,8 @@ export function Button({
   style,
   size = ButtonSize.medium,
   color = ButtonColor.primary,
+  textAlign = ButtonTextAlignment.center,
+  stretch = false,
 }: ButtonProps) {
   return (
     <StyledButton
@@ -91,6 +114,8 @@ export function Button({
       size={size}
       color={color}
       disabledStyle={disabled}
+      textAlign={textAlign}
+      stretch={stretch}
     >
       {children}
     </StyledButton>
