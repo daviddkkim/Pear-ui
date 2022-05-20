@@ -11,7 +11,6 @@ export interface ButtonProps {
   color?: ButtonColor;
 }
 
-
 const StyledButton = styled("button", {
   transition: "all 150ms ease",
   borderRadius: "$2",
@@ -37,7 +36,7 @@ const StyledButton = styled("button", {
         },
       },
       ghost: {
-        backgroundColor: "$mauve1",
+        backgroundColor: "$inherit",
         border: "1px solid transparent",
         color: "$violet12",
         "&:hover": {
