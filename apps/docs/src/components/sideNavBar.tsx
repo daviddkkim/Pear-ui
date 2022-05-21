@@ -1,10 +1,5 @@
 import * as React from "react";
-import {
-  styled,
-  SideNav,
-  SideNavList,
-  SideNavListItem,
-} from "@pear-ui/core";
+import { styled, SideNav, SideNavList, SideNavListItem } from "@pear-ui/core";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 
@@ -36,6 +31,8 @@ export function SideNavBar() {
         return "sidenav";
       } else if (router.asPath.includes("charts")) {
         return "charts";
+      } else if (router.asPath.includes("dialogs")) {
+        return "dialogs";
       }
       return "";
     },
@@ -58,11 +55,7 @@ export function SideNavBar() {
   };
 
   return (
-    <SideNav
-      title={
-        <Title/>
-      }
-    >
+    <SideNav title={<Title />}>
       <SideNavListItem
         to="/"
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -107,6 +100,17 @@ export function SideNavBar() {
         >
           {" "}
           SideNav
+        </SideNavListItem>
+        <SideNavListItem
+          to="/dialogs"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            router.push("/dialogs");
+          }}
+          active={active.includes("dialogs") ? true : false}
+        >
+          {" "}
+          Dialog
         </SideNavListItem>
         <SideNavListItem
           to="/charts"

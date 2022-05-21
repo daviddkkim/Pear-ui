@@ -22,7 +22,6 @@ const StyledNav = styled("nav", {
   left: 0,
   top: 0,
   bottom: 0,
-  zIndex: 1,
   boxSizing: "border-box",
 });
 

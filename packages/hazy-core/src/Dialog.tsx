@@ -1,19 +1,55 @@
 import * as React from "react";
-import { ButtonColor, ButtonSize, ButtonTextAlignment } from "./types";
 import { styled } from "../stitches.config";
+import { ButtonColor, ButtonSize, ButtonTextAlignment } from "./types";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 
-export interface ButtonProps {
+export interface DialogProps {
   children: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  disabled?: boolean;
-  style?: React.CSSProperties;
-  size?: ButtonSize;
-  color?: ButtonColor;
-  textAlign?: ButtonTextAlignment;
-  stretch?: boolean;
+  headerSlot?: React.ReactNode;
+}
+const StyledOverlay = styled(DialogPrimitive.Overlay, {
+  backgroundColor: "$mauveA8",
+  position: "fixed",
+  inset: 0,
+});
+
+const StyledContent = styled(DialogPrimitive.Content, {
+  backgroundColor: "$mauve1",
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  width: "100%",
+  maxWidth: "600px",
+  transform: "translate(-50%, -50%)",
+  border: "1px solid $mauve5",
+  borderRadius: "$2",
+  boxShadow: "1px 1px 10px $colors$mauveA5, 1px 1px 5px $colors$mauveA4",
+  padding: "$4",
+  display: "flex",
+  flexDirection: "column",
+  rowGap: "$4",
+});
+
+const StyledTitle = styled(DialogPrimitive.Title, {
+  margin: 0,
+  fontSize: "$4",
+});
+
+const Box = styled("div", {});
+
+export function DialogContent({ children, headerSlot }: DialogProps) {
+  return (
+    <DialogPrimitive.Portal>
+      <StyledOverlay />
+      <StyledContent>
+        {headerSlot && headerSlot}
+        {children}
+      </StyledContent>
+    </DialogPrimitive.Portal>
+  );
 }
 
-const StyledButton = styled("button", {
+const StyledDialogTriggerButton = styled(DialogPrimitive.Trigger, {
   all: "unset",
   transition: "all 150ms ease",
   borderRadius: "$2",
@@ -103,30 +139,42 @@ const StyledButton = styled("button", {
   },
 });
 
-export function Button({
+export interface DialogTriggerProps {
+  children: React.ReactNode;
+  asChild?: boolean;
+  size?: ButtonSize;
+  color?: ButtonColor;
+  disabled?: boolean;
+  textAlign?: ButtonTextAlignment;
+  stretched?: boolean;
+}
+
+export function DialogTriggerButton({
   children,
-  onClick,
-  disabled = false,
-  style,
+  asChild = false,
   size = ButtonSize.medium,
   color = ButtonColor.primary,
+  disabled = false,
   textAlign = ButtonTextAlignment.center,
-  stretch = false,
-}: ButtonProps) {
+  stretched = false,
+}: DialogTriggerProps) {
   return (
-    <StyledButton
-      onClick={onClick}
-      disabled={disabled}
-      style={style}
+    <StyledDialogTriggerButton
       size={size}
       color={color}
       disabledStyle={disabled}
+      disabled={disabled}
       textAlign={textAlign}
-      stretch={stretch}
+      asChild={asChild}
+      stretch={stretched}
     >
       {children}
-    </StyledButton>
+    </StyledDialogTriggerButton>
   );
 }
 
-Button.displayName = "Button";
+export const Dialog = DialogPrimitive.Dialog;
+export const DialogTrigger = DialogPrimitive.Trigger;
+export const DialogClose = DialogPrimitive.Close;
+export const DialogTitle = StyledTitle;
+DialogContent.displayName = "DialogContent";
