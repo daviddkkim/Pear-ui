@@ -11,7 +11,6 @@ export interface ButtonProps {
   color?: ButtonColor;
   textAlign?: ButtonTextAlignment;
   stretch?: boolean;
-
 }
 
 const StyledButton = styled("button", {
@@ -72,16 +71,19 @@ const StyledButton = styled("button", {
     },
     size: {
       small: {
-        padding: "$1 $2",
+        padding: "0 $2",
         fontSize: "$2",
+        height: "$5",
       },
       medium: {
-        padding: "$2 $3",
+        padding: "0 $3",
         fontSize: "$3",
+        height: "$6",
       },
       large: {
-        padding: "$3 $4",
+        padding: "0 $4",
         fontSize: "$4",
+        height: "calc( $6 + $2)",
       },
     },
     disabledStyle: {
