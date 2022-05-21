@@ -20,8 +20,6 @@ const StyledContent = styled(DialogPrimitive.Content, {
   left: "50%",
   width: "100%",
   maxWidth: "600px",
-  maxHeight: "75vh",
-  height: "100%",
   transform: "translate(-50%, -50%)",
   border: "1px solid $mauve5",
   borderRadius: "$2",
@@ -35,6 +33,23 @@ const StyledContent = styled(DialogPrimitive.Content, {
 const StyledTitle = styled(DialogPrimitive.Title, {
   margin: 0,
   fontSize: "$4",
+});
+
+const DialogTriggerButton = styled(DialogPrimitive.Trigger, {
+  all: "unset",
+  transition: "all 150ms ease",
+  borderRadius: "$2",
+  background: "linear-gradient(120deg, $mauve12, $violet12)",
+  border: "1px solid $colors$mauveA1",
+  color: "$mauve1",
+  boxShadow: "1px 1px 1px $colors$mauveA4",
+  "&:hover": {
+    background: "linear-gradient(120deg, $mauve12, $violet11)",
+  },
+  "&:focus": {
+    border: "2px solid $colors$indigo8",
+    boxShadow: "0px 0px 2px $colors$indigo12",
+  },
 });
 
 const Box = styled("div", {});
@@ -52,7 +67,7 @@ export function DialogContent({ children, headerSlot }: DialogProps) {
 }
 
 export const Dialog = DialogPrimitive.Dialog;
-export const DialogTrigger = DialogPrimitive.Trigger;
+export const DialogTrigger = DialogTriggerButton;
 export const DialogClose = DialogPrimitive.Close;
 export const DialogTitle = StyledTitle;
 DialogContent.displayName = "DialogContent";

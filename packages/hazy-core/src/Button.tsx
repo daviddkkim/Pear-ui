@@ -11,11 +11,17 @@ export interface ButtonProps {
   color?: ButtonColor;
   textAlign?: ButtonTextAlignment;
   stretch?: boolean;
+
 }
 
 const StyledButton = styled("button", {
+  all: "unset",
   transition: "all 150ms ease",
   borderRadius: "$2",
+  "&:focus": {
+    border: "2px solid $colors$indigo8",
+    boxShadow: "0px 0px 2px $colors$indigo12",
+  },
   variants: {
     color: {
       primary: {
@@ -23,7 +29,6 @@ const StyledButton = styled("button", {
         border: "1px solid $colors$mauveA1",
         color: "$mauve1",
         boxShadow: "1px 1px 1px $colors$mauveA4",
-
         "&:hover": {
           background: "linear-gradient(120deg, $mauve12, $violet11)",
         },
