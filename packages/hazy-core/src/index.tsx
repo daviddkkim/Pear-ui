@@ -11,9 +11,11 @@ export {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTriggerButton,
   DialogClose,
   DialogTitle,
   type DialogProps,
+  type DialogTriggerProps,
 } from "./Dialog";
 export { ButtonGroup, type ButtonGroupProps } from "./ButtonGroups";
 export {

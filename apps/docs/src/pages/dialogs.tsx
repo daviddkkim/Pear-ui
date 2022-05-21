@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import {
   Dialog,
-  DialogTrigger,
+  DialogTriggerButton,
   DialogContent,
   DialogTitle,
   DialogClose,
@@ -39,7 +39,7 @@ const Dialogs: NextPage = () => {
     props: {
       children: {
         value:
-          "<DialogTrigger> Click</DialogTrigger> <DialogContent headerSlot={<HeaderSlotContainer><DialogTitle>Title</DialogTitle><DialogClose>close</DialogClose></HeaderSlotContainer>}> <div>Content</div> <div style={{display:'flex', justifyContent: 'flex-end'}}><DialogClose asChild><Button> Save </Button></DialogClose></div> </DialogContent>",
+          "<DialogTriggerButton> Click</DialogTriggerButton> <DialogContent headerSlot={<HeaderSlotContainer><DialogTitle>Title</DialogTitle><DialogClose>close</DialogClose></HeaderSlotContainer>}> <div>Content</div> <div style={{display:'flex', justifyContent: 'flex-end'}}><DialogClose asChild><Button> Save </Button></DialogClose></div> </DialogContent>",
         type: PropTypes.ReactNode,
         description: "Visible label.",
       },
@@ -47,7 +47,7 @@ const Dialogs: NextPage = () => {
     scope: {
       Dialog,
       DialogContent,
-      DialogTrigger,
+      DialogTriggerButton,
       DialogClose,
       DialogTitle,
       HeaderSlotContainer,
@@ -58,7 +58,7 @@ const Dialogs: NextPage = () => {
         named: [
           "Dialog",
           "DialogContent",
-          "DialogTrigger",
+          "DialogTriggerButton",
           "DialogClose",
           "DialogTitle",
           "Button",
