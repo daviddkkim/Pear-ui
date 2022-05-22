@@ -119,7 +119,7 @@ const NavLink = styled("a", {
     },
   },
   "&:focus-visible": {
-    border: "1px solid $mauve12",
+    boxShadow: "0 0 0 2px $colors$indigo8",
   },
   variants: {
     state: {
