@@ -85,7 +85,7 @@ const Buttons: NextPage = () => {
   return (
     <Container>
       {" "}
-      <h1>hazy Documentation</h1>
+      <h1>Buttons Documentation</h1>
       <Box css={{ border: "1px solid $mauve8", borderRadius: "4px" }}>
         <Compiler
           {...params.compilerProps}

@@ -68,7 +68,7 @@ const Dialogs: NextPage = () => {
   });
   return (
     <Container>
-      <h1>hazy Documentation</h1>
+      <h1>Dialog</h1>
       <Box css={{ border: "1px solid $mauve8", borderRadius: "$2" }}>
         <Compiler
           {...params.compilerProps}

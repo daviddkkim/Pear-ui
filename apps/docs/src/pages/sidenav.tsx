@@ -104,7 +104,7 @@ const SideNavs: NextPage = () => {
   });
   return (
     <Container>
-      <h1>hazy Documentation</h1>
+      <h1>Side Nav</h1>
       <Box
         css={{
           border: "1px solid $mauve8",
