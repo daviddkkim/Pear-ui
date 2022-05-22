@@ -6,7 +6,7 @@ import { LineChart } from "@pear-ui/charts";
 const Charts: NextPage = () => {
   return (
     <div>
-      <h1>hazy Documentation</h1>
+      <h1>Charts Documentation</h1>
       {/* <View
         componentName="Button"
         props={{

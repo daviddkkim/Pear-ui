@@ -51,7 +51,7 @@ const ButtonGroups: NextPage = () => {
   });
   return (
     <Container>
-      <h1>hazy Documentation</h1>
+      <h1>Button Groups Documentation</h1>
       <Box css={{ border: "1px solid $mauve8", borderRadius: "$2" }}>
         <Compiler
           {...params.compilerProps}
