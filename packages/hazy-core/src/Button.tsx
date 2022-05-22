@@ -17,6 +17,7 @@ const StyledButton = styled("button", {
   all: "unset",
   transition: "all 150ms ease",
   borderRadius: "$2",
+  boxSizing: "border-box",
   "&:focus-visible": {
     border: "2px solid $colors$indigo8",
     boxShadow: "0px 0px 2px $colors$indigo12",
