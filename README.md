@@ -66,6 +66,11 @@ npx changeset publish
 yarn link in the package repo (for example, in pear-ui/core)
 yarn link @pear-ui/core in the product repo
 
+You might also need to go to node-modules/react and node-modules/react-dom to yarn link
+and then yarn link react , yarn link react-dom in the product repo. 
+
+Having multiple version of react fail hooks and Radix-ui components are reliant on hooks.
+
 #### GitHub Package Registry
 
 See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
