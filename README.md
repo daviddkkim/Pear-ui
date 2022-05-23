@@ -63,8 +63,8 @@ npx changeset publish
 ```
 
 ### local development
-npm link in the package repo (for example, in pear-ui/core)
-npm link @pear-ui/core in the product repo
+yarn link in the package repo (for example, in pear-ui/core)
+yarn link @pear-ui/core in the product repo
 
 #### GitHub Package Registry
 
