@@ -16,7 +16,7 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
 const StyledContent = styled(DialogPrimitive.Content, {
   backgroundColor: "$mauve1",
   position: "fixed",
-  top: "50%",
+  top: "25%",
   left: "50%",
   width: "100%",
   maxWidth: "600px",
