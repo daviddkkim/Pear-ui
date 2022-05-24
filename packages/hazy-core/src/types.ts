@@ -10,6 +10,12 @@ export enum ButtonColor {
   ghost = "ghost",
 }
 
+export enum ButtonTextAlignment {
+  start = "start",
+  end = "end",
+  center = "center",
+}
+
 export enum ButtonGroupSpacing {
   none = "none",
   small = "small",
@@ -17,8 +23,7 @@ export enum ButtonGroupSpacing {
   large = "large",
 }
 
-export enum ButtonTextAlignment {
-  start = "start",
-  end = "end",
-  center = "center",
+export enum ButtonGroupDirection {
+  default = "default",
+  reverse = "reverse",
 }

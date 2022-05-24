@@ -1,10 +1,11 @@
 import * as React from "react";
 import { styled } from "../stitches.config";
-import { ButtonGroupSpacing } from "./types";
+import { ButtonGroupDirection, ButtonGroupSpacing } from "./types";
 
 export interface ButtonGroupProps {
   children: React.ReactNode;
   spacing?: ButtonGroupSpacing;
+  direction?: ButtonGroupDirection;
 }
 const ButtonGroupContainer = styled("div", {
   display: "flex",
@@ -35,14 +36,21 @@ const ButtonGroupContainer = styled("div", {
         columnGap: "$3",
       },
     },
+    direction: {
+      default: {},
+      reverse: {
+        flexDirection: "row-reverse",
+      },
+    },
   },
 });
 export function ButtonGroup({
   children,
   spacing = ButtonGroupSpacing.medium,
+  direction = ButtonGroupDirection.default,
 }: ButtonGroupProps) {
   return (
-    <ButtonGroupContainer spacing={spacing}>
+    <ButtonGroupContainer spacing={spacing} direction={direction}>
       {children}
     </ButtonGroupContainer>
   );

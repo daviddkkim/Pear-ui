@@ -6,6 +6,7 @@ export {
   ButtonColor,
   ButtonGroupSpacing,
   ButtonTextAlignment,
+  ButtonGroupDirection,
 } from "./types";
 export {
   Dialog,

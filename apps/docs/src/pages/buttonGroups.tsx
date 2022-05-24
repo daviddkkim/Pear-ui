@@ -1,5 +1,11 @@
 import type { NextPage } from "next";
-import { ButtonGroup, Button, styled, ButtonGroupSpacing } from "@pear-ui/core";
+import {
+  ButtonGroup,
+  Button,
+  styled,
+  ButtonGroupSpacing,
+  ButtonGroupDirection,
+} from "@pear-ui/core";
 import {
   useView,
   Compiler,
@@ -36,6 +42,13 @@ const ButtonGroups: NextPage = () => {
         type: PropTypes.Enum,
         options: ButtonGroupSpacing,
         description: "Defines the spacing between the buttons",
+      },
+      direction: {
+        value: ButtonGroupDirection.default,
+        defaultValue: ButtonGroupDirection.default,
+        type: PropTypes.Enum,
+        options: ButtonGroupDirection,
+        description: "defines the flex direction of the buttons",
       },
     },
     scope: {

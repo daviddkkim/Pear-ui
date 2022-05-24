@@ -148,9 +148,11 @@ export interface DialogTriggerProps {
   disabled?: boolean;
   textAlign?: ButtonTextAlignment;
   stretched?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export function DialogTriggerButton({
+  onClick,
   children,
   asChild = false,
   size = ButtonSize.medium,
@@ -168,6 +170,7 @@ export function DialogTriggerButton({
       textAlign={textAlign}
       asChild={asChild}
       stretch={stretched}
+      onClick={onClick}
     >
       {children}
     </StyledDialogTriggerButton>
