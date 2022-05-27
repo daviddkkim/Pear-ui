@@ -30,4 +30,17 @@ export {
   type SidenavListProps,
 } from "./SideNav";
 
+export {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  DropdownTriggerButton,
+  type DropdownTriggerProps,
+  type DropdownMenuContentProps,
+} from "./Dropdown";
+
 export { Stack, type StackProps } from "./Stack";

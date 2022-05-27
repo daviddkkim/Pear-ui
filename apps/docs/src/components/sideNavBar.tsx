@@ -33,6 +33,8 @@ export function SideNavBar() {
         return "stacks";
       } else if (router.asPath.includes("dialogs")) {
         return "dialogs";
+      } else if (router.asPath.includes("dropdowns")) {
+        return "dropdowns";
       }
       return "";
     },
@@ -111,6 +113,17 @@ export function SideNavBar() {
         >
           {" "}
           Dialog
+        </SideNavListItem>
+        <SideNavListItem
+          to="/dropdowns"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            router.push("/dropdowns");
+          }}
+          active={active.includes("dropdowns") ? true : false}
+        >
+          {" "}
+          Dropdown
         </SideNavListItem>
         <SideNavListItem
           to="/stacks"
