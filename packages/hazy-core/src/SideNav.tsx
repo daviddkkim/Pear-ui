@@ -1,4 +1,5 @@
 import * as React from "react";
+import { forwardRef } from "react";
 import { styled } from "../stitches.config";
 
 /* -------------------------------------------------------------------------------------------------
@@ -30,19 +31,22 @@ const StyledTitle = styled("div", {
   padding: "0 $4",
 });
 
-export function SideNav({ children, style, title }: SideNavProps) {
-  return (
-    <StyledNav
-      role="menu"
-      aria-orientation="vertical"
-      aria-label="Sidebar"
-      style={style}
-    >
-      <StyledTitle>{title}</StyledTitle>
-      {children}
-    </StyledNav>
-  );
-}
+export const SideNav = forwardRef<HTMLDivElement, SideNavProps>(
+  ({ children, style, title }, ref) => {
+    return (
+      <StyledNav
+        role="menu"
+        aria-orientation="vertical"
+        aria-label="Sidebar"
+        style={style}
+        ref={ref}
+      >
+        <StyledTitle>{title}</StyledTitle>
+        {children}
+      </StyledNav>
+    );
+  }
+);
 
 SideNav.displayName = "SideNav";
 
@@ -70,17 +74,19 @@ const StyledListHeader = styled("h4", {
   fontWeight: 400,
   color: "$mauve10",
 });
-export function SideNavList({ children, style, title }: SidenavListProps) {
-  const listHeader = title ? (
-    <StyledListHeader> {title} </StyledListHeader>
-  ) : null;
-  return (
-    <StyledNavList style={style}>
-      {listHeader && listHeader}
-      {children}
-    </StyledNavList>
-  );
-}
+export const SideNavList = forwardRef<HTMLUListElement, SidenavListProps>(
+  ({ children, style, title }, ref) => {
+    const listHeader = title ? (
+      <StyledListHeader> {title} </StyledListHeader>
+    ) : null;
+    return (
+      <StyledNavList style={style} ref={ref}>
+        {listHeader && listHeader}
+        {children}
+      </StyledNavList>
+    );
+  }
+);
 
 SideNavList.displayName = "SideNavList";
 /* -------------------------------------------------------------------------------------------------
@@ -138,35 +144,40 @@ const ContentContainer = styled("div", {
   justifyContent: "center",
 });
 
-export function SideNavListItem({
-  children,
-  style,
-  onClick,
-  to,
-  tabIndex,
-  active = false,
-  icon,
-  indented = false,
-}: SidenavListItemProps) {
-  return (
-    <StyledNavlistitem style={style}>
-      <NavLink
-        onClick={onClick}
-        href={to}
-        tabIndex={tabIndex}
-        state={active ? "active" : "default"}
-      >
-        <ContentContainer>
-          {icon ? (
-            icon
-          ) : indented ? (
-            <div style={{ width: "20px" }}></div>
-          ) : null}
-          <span>{children}</span>
-        </ContentContainer>
-      </NavLink>
-    </StyledNavlistitem>
-  );
-}
+export const SideNavListItem = forwardRef<HTMLLIElement, SidenavListItemProps>(
+  (
+    {
+      children,
+      style,
+      onClick,
+      to,
+      tabIndex,
+      active = false,
+      icon,
+      indented = false,
+    },
+    ref
+  ) => {
+    return (
+      <StyledNavlistitem style={style} ref={ref}>
+        <NavLink
+          onClick={onClick}
+          href={to}
+          tabIndex={tabIndex}
+          state={active ? "active" : "default"}
+        >
+          <ContentContainer>
+            {icon ? (
+              icon
+            ) : indented ? (
+              <div style={{ width: "20px" }}></div>
+            ) : null}
+            <span>{children}</span>
+          </ContentContainer>
+        </NavLink>
+      </StyledNavlistitem>
+    );
+  }
+);
 
 SideNavListItem.displayName = "SideNavListItem";

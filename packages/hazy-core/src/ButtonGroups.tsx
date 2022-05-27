@@ -1,4 +1,5 @@
 import * as React from "react";
+import { forwardRef } from "react";
 import { styled } from "../stitches.config";
 import { ButtonGroupDirection, ButtonGroupSpacing } from "./types";
 
@@ -44,16 +45,21 @@ const ButtonGroupContainer = styled("div", {
     },
   },
 });
-export function ButtonGroup({
-  children,
-  spacing = ButtonGroupSpacing.medium,
-  direction = ButtonGroupDirection.default,
-}: ButtonGroupProps) {
-  return (
-    <ButtonGroupContainer spacing={spacing} direction={direction}>
-      {children}
-    </ButtonGroupContainer>
-  );
-}
+export const ButtonGroup = forwardRef<HTMLButtonElement, ButtonGroupProps>(
+  (
+    {
+      children,
+      spacing = ButtonGroupSpacing.medium,
+      direction = ButtonGroupDirection.default,
+    },
+    ref
+  ) => {
+    return (
+      <ButtonGroupContainer spacing={spacing} direction={direction}>
+        {children}
+      </ButtonGroupContainer>
+    );
+  }
+);
 
 ButtonGroup.displayName = "ButtonGroup";

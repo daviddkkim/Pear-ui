@@ -27,3 +27,16 @@ export enum ButtonGroupDirection {
   default = "default",
   reverse = "reverse",
 }
+
+export enum StackSpacing {
+  small = "small",
+  medium = "medium",
+  large = "large",
+}
+
+export enum StackDirection {
+  vertical = "vertical",
+  horizontal = "horizontal",
+  reverseVertical = "reverseVertical",
+  reverseHorizontal = "reverseHorizontal",
+}

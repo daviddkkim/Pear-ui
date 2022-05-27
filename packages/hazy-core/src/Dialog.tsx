@@ -2,6 +2,7 @@ import * as React from "react";
 import { styled } from "../stitches.config";
 import { ButtonColor, ButtonSize, ButtonTextAlignment } from "./types";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { forwardRef } from "react";
 
 export interface DialogProps {
   children: React.ReactNode;
@@ -37,17 +38,19 @@ const StyledTitle = styled(DialogPrimitive.Title, {
 
 const Box = styled("div", {});
 
-export function DialogContent({ children, headerSlot }: DialogProps) {
-  return (
-    <DialogPrimitive.Portal>
-      <StyledOverlay />
-      <StyledContent>
-        {headerSlot && headerSlot}
-        {children}
-      </StyledContent>
-    </DialogPrimitive.Portal>
-  );
-}
+export const DialogContent = forwardRef<HTMLDivElement, DialogProps>(
+  ({ children, headerSlot }, ref) => {
+    return (
+      <DialogPrimitive.Portal>
+        <StyledOverlay />
+        <StyledContent ref={ref}>
+          {headerSlot && headerSlot}
+          {children}
+        </StyledContent>
+      </DialogPrimitive.Portal>
+    );
+  }
+);
 
 const StyledDialogTriggerButton = styled(DialogPrimitive.Trigger, {
   all: "unset",
@@ -151,31 +154,42 @@ export interface DialogTriggerProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export function DialogTriggerButton({
-  onClick,
-  children,
-  asChild = false,
-  size = ButtonSize.medium,
-  color = ButtonColor.primary,
-  disabled = false,
-  textAlign = ButtonTextAlignment.center,
-  stretched = false,
-}: DialogTriggerProps) {
-  return (
-    <StyledDialogTriggerButton
-      size={size}
-      color={color}
-      disabledStyle={disabled}
-      disabled={disabled}
-      textAlign={textAlign}
-      asChild={asChild}
-      stretch={stretched}
-      onClick={onClick}
-    >
-      {children}
-    </StyledDialogTriggerButton>
-  );
-}
+export const DialogTriggerButton = forwardRef<
+  HTMLButtonElement,
+  DialogTriggerProps
+>(
+  (
+    {
+      onClick,
+      children,
+      asChild = false,
+      size = ButtonSize.medium,
+      color = ButtonColor.primary,
+      disabled = false,
+      textAlign = ButtonTextAlignment.center,
+      stretched = false,
+    },
+    ref
+  ) => {
+    return (
+      <StyledDialogTriggerButton
+        size={size}
+        color={color}
+        disabledStyle={disabled}
+        disabled={disabled}
+        textAlign={textAlign}
+        asChild={asChild}
+        stretch={stretched}
+        onClick={onClick}
+        ref={ref}
+      >
+        {children}
+      </StyledDialogTriggerButton>
+    );
+  }
+);
+
+DialogTriggerButton.displayName = "DialogTriggerButton";
 
 export const Dialog = DialogPrimitive.Dialog;
 export const DialogTrigger = DialogPrimitive.Trigger;
