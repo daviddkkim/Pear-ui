@@ -15,7 +15,7 @@ const globalStyles = globalCss({
   },
 
   "body, button": {
-    fontFamily: "$untitled",
+    fontFamily: "$mono",
   },
 
   svg: { display: "block" },
