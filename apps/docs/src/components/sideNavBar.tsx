@@ -29,8 +29,8 @@ export function SideNavBar() {
         return "buttonGroups";
       } else if (router.asPath.includes("sidenav")) {
         return "sidenav";
-      } else if (router.asPath.includes("charts")) {
-        return "charts";
+      } else if (router.asPath.includes("stacks")) {
+        return "stacks";
       } else if (router.asPath.includes("dialogs")) {
         return "dialogs";
       }
@@ -48,7 +48,7 @@ export function SideNavBar() {
   const Title = () => {
     return (
       <TitleContainer>
-        <ColorBox />
+        <span style={{ fontSize: "24px", lineHeight: "28px" }}>🍐</span>
         <StyledTitle>Pear-ui</StyledTitle>
       </TitleContainer>
     );
@@ -113,15 +113,15 @@ export function SideNavBar() {
           Dialog
         </SideNavListItem>
         <SideNavListItem
-          to="/charts"
+          to="/stacks"
           onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
             e.preventDefault();
-            router.push("/charts");
+            router.push("/stacks");
           }}
-          active={active.includes("charts") ? true : false}
+          active={active.includes("stacks") ? true : false}
         >
           {" "}
-          Chart
+          Stack
         </SideNavListItem>
       </SideNavList>
     </SideNav>

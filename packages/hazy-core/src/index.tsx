@@ -7,6 +7,8 @@ export {
   ButtonGroupSpacing,
   ButtonTextAlignment,
   ButtonGroupDirection,
+  StackDirection,
+  StackSpacing,
 } from "./types";
 export {
   Dialog,
@@ -27,3 +29,5 @@ export {
   type SidenavListItemProps,
   type SidenavListProps,
 } from "./SideNav";
+
+export { Stack, type StackProps } from "./Stack";

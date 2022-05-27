@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ButtonColor, ButtonSize, ButtonTextAlignment } from "./types";
 import { styled } from "../stitches.config";
+import { forwardRef } from "react";
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -19,13 +20,13 @@ const StyledButton = styled("button", {
   borderRadius: "$2",
   boxSizing: "border-box",
   "&:focus-visible": {
-    boxShadow: "0 0 0 2px $colors$indigo8",
+    boxShadow: "0 0 0 2px $colors$indigo8, 0 0 0 3px $colors$indigo9",
   },
   variants: {
     color: {
       primary: {
         background: "linear-gradient(120deg, $mauve12, $violet12)",
-        border: "1px solid $colors$mauveA1",
+        border: "1px solid $colors$violet8",
         color: "$mauve1",
         boxShadow: "1px 1px 1px $colors$mauveA4",
         "&:hover": {
@@ -103,30 +104,36 @@ const StyledButton = styled("button", {
   },
 });
 
-export function Button({
-  children,
-  onClick,
-  disabled = false,
-  style,
-  size = ButtonSize.medium,
-  color = ButtonColor.primary,
-  textAlign = ButtonTextAlignment.center,
-  stretch = false,
-}: ButtonProps) {
-  return (
-    <StyledButton
-      onClick={onClick}
-      disabled={disabled}
-      style={style}
-      size={size}
-      color={color}
-      disabledStyle={disabled}
-      textAlign={textAlign}
-      stretch={stretch}
-    >
-      {children}
-    </StyledButton>
-  );
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      onClick,
+      disabled = false,
+      style,
+      size = ButtonSize.medium,
+      color = ButtonColor.primary,
+      textAlign = ButtonTextAlignment.center,
+      stretch = false,
+    },
+    ref
+  ) => {
+    return (
+      <StyledButton
+        onClick={onClick}
+        disabled={disabled}
+        style={style}
+        size={size}
+        color={color}
+        disabledStyle={disabled}
+        textAlign={textAlign}
+        stretch={stretch}
+        ref={ref}
+      >
+        {children}
+      </StyledButton>
+    );
+  }
+);
 
 Button.displayName = "Button";
