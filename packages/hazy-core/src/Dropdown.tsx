@@ -152,9 +152,9 @@ export interface DropdownMenuContentProps {
 }
 
 const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
-  border: "1px solid $mauve5",
+  border: "1px solid $mauve6",
   background: "$mauve3",
-  padding: "$2 $3",
+  padding: "$3",
   borderRadius: "$2",
   boxShadow: "1px 1px 10px $colors$mauveA5, 1px 1px 5px $colors$mauveA4",
   display: "flex",
@@ -182,6 +182,7 @@ const StyledSeparator = styled(DropdownMenuPrimitive.Separator, {
 
 const StyledLabel = styled(DropdownMenuPrimitive.Label, {
   fontSize: "$3",
+  margin: "0 $2",
   color: "$mauve11",
 });
 
@@ -194,8 +195,10 @@ const StyledGroup = styled(DropdownMenuPrimitive.Group, {
 const StyledItem = styled(DropdownMenuPrimitive.Item, {
   outline: "none",
   borderRadius: "$2",
+  padding: "$1 $2",
   "&:focus-visible": {
-    boxShadow: "0 0 0 2px $colors$indigo8, 0 0 0 3px $colors$indigo9",
+    backgroundColor: "$mauve5",
+    boxShadow: "1px 1px 1px $colors$mauveA5",
   },
 });
 
