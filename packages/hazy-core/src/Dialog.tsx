@@ -59,7 +59,7 @@ const StyledDialogTriggerButton = styled(DialogPrimitive.Trigger, {
   boxSizing: "border-box",
   border: "1px solid transparent",
   "&:focus-visible": {
-    boxShadow: "0 0 0 2px $colors$indigo8",
+    boxShadow: "0 0 0 2px $colors$indigo8, 0 0 0 3px $colors$indigo9",
   },
   variants: {
     color: {
