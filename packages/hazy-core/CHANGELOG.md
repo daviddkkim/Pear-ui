@@ -1,5 +1,12 @@
 # @pear-ui/core
 
+## 1.3.0
+
+### Minor Changes
+
+- bb6d87e: Added Dropdown
+- e9459d4: Change focus treatment for dropdown menu item
+
 ## 1.2.0
 
 ### Minor Changes
