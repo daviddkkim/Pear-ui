@@ -153,7 +153,7 @@ export interface DropdownMenuContentProps {
 
 const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
   border: "1px solid $mauve6",
-  background: "$mauve3",
+  background: "$mauve1",
   padding: "$3",
   borderRadius: "$2",
   boxShadow: "1px 1px 10px $colors$mauveA5, 1px 1px 5px $colors$mauveA4",
@@ -197,8 +197,11 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   borderRadius: "$2",
   padding: "$1 $2",
   "&:focus-visible": {
-    backgroundColor: "$mauve5",
+    backgroundColor: "$mauve3",
     boxShadow: "1px 1px 1px $colors$mauveA5",
+  },
+  "&:hover": {
+    cursor: "pointer",
   },
 });
 
