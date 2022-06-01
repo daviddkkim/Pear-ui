@@ -26,7 +26,7 @@ const StyledButton = styled("button", {
     color: {
       primary: {
         background: "linear-gradient(120deg, $mauve12, $violet12)",
-        border: "1px solid $colors$violet8",
+        border: "1px solid $colors$violet6",
         color: "$mauve1",
         boxShadow: "1px 1px 1px $colors$mauveA4",
         "&:hover": {

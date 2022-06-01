@@ -29,6 +29,7 @@ export enum ButtonGroupDirection {
 }
 
 export enum StackSpacing {
+  none = "none",
   small = "small",
   medium = "medium",
   large = "large",

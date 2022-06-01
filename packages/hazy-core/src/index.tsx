@@ -43,4 +43,14 @@ export {
   type DropdownMenuContentProps,
 } from "./Dropdown";
 
+export {
+  Select,
+  SelectItem,
+  SelectTriggerButton,
+  SelectContent,
+  type SelectTriggerProps,
+  type SelectItemProps,
+  type SelectProps,
+} from "./Select";
+
 export { Stack, type StackProps } from "./Stack";

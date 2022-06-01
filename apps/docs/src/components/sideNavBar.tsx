@@ -31,6 +31,8 @@ export function SideNavBar() {
         return "sidenav";
       } else if (router.asPath.includes("stacks")) {
         return "stacks";
+      } else if (router.asPath.includes("selects")) {
+        return "selects";
       } else if (router.asPath.includes("dialogs")) {
         return "dialogs";
       } else if (router.asPath.includes("dropdowns")) {
@@ -102,6 +104,17 @@ export function SideNavBar() {
         >
           {" "}
           SideNav
+        </SideNavListItem>
+        <SideNavListItem
+          to="/selects"
+          onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+            e.preventDefault();
+            router.push("/selects");
+          }}
+          active={active.includes("selects") ? true : false}
+        >
+          {" "}
+          Selects
         </SideNavListItem>
         <SideNavListItem
           to="/dialogs"

@@ -20,7 +20,7 @@ const StyledDropdownTriggerButton = styled(DropdownMenuPrimitive.Trigger, {
     color: {
       primary: {
         background: "linear-gradient(120deg, $mauve12, $violet12)",
-        border: "1px solid $colors$mauveA1",
+        border: "1px solid $colors$violet6",
         color: "$mauve1",
         boxShadow: "1px 1px 1px $colors$mauveA4",
         "&:hover": {
@@ -197,7 +197,7 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   borderRadius: "$2",
   padding: "$1 $2",
   "&:focus-visible": {
-    backgroundColor: "$mauve3",
+    backgroundColor: "$violet3",
     boxShadow: "1px 1px 1px $colors$mauveA5",
   },
   "&:hover": {

@@ -17,6 +17,10 @@ const StackContainer = styled("div", {
   display: "flex",
   variants: {
     spacing: {
+      none: {
+        rowGap: "0",
+        columnGap: "0",
+      },
       small: {
         rowGap: "$2",
         columnGap: "$2",
