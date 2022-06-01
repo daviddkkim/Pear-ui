@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled, SideNav, SideNavList, SideNavListItem } from "@pear-ui/core";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
-
+import { ThemeSelector } from "./themeSelect";
 const TitleContainer = styled("div", {
   display: "flex",
   columnGap: "$3",
@@ -12,11 +12,6 @@ const TitleContainer = styled("div", {
 const StyledTitle = styled("h1", {
   margin: 0,
   padding: 0,
-});
-const ColorBox = styled("div", {
-  size: "$5",
-  background: "linear-gradient(100deg, $mauve12, $violet11)",
-  borderRadius: "$2",
 });
 
 export function SideNavBar() {
@@ -60,6 +55,8 @@ export function SideNavBar() {
 
   return (
     <SideNav title={<Title />}>
+      <ThemeSelector />
+
       <SideNavListItem
         to="/"
         onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {

@@ -12,11 +12,12 @@ import { ButtonColor, ButtonSize } from "./types";
 const StyledContent = styled(SelectPrimitive.Content, {
   backgroundColor: "$mauve1",
   border: "1px solid $mauve6",
-  padding: "$3",
+  padding: "$2",
   borderRadius: "$2",
 });
 
 export interface SelectProps {
+  children: React.ReactNode;
   value?: string;
   defaultValue?: string;
   open?: boolean;
@@ -45,7 +46,7 @@ export const SelectContent = React.forwardRef<HTMLDivElement, SelectProps>(
 SelectContent.displayName = "SelectContent";
 
 export interface SelectTriggerProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   disabled?: boolean;
   id?: string;
   buttonColor?: ButtonColor;
@@ -56,8 +57,9 @@ const StyledSelectTrigger = styled(SelectPrimitive.Trigger, {
   all: "unset",
   display: "inline-flex",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "space-between",
   transition: "all 150ms ease",
+  columnGap: "$2",
   borderRadius: "$2",
   boxSizing: "border-box",
   border: "1px solid transparent",
@@ -182,7 +184,7 @@ const StyledItem = styled(SelectPrimitive.Item, {
   display: "flex",
   alignItems: "center",
   position: "relative",
-  padding: "$1 $6",
+  padding: "$1 $5",
   borderRadius: "$2",
   outline: "none",
   "&:focus-visible": {
@@ -202,10 +204,11 @@ const StyledItemIndicator = styled(SelectPrimitive.ItemIndicator, {
 });
 
 export interface SelectItemProps {
+  children: React.ReactNode;
   value: string;
   asChild?: boolean;
   disabled?: boolean;
-  textValue: string;
+  textValue?: string;
 }
 export const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
   ({ children, ...props }, forwardedRef) => {
