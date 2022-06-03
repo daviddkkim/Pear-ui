@@ -16,8 +16,8 @@ const StyledNav = styled("nav", {
   display: "flex",
   flexDirection: "column",
   rowGap: "$3",
-  backgroundColor: "$mauve3",
-  borderRight: "1px solid $mauve5",
+  backgroundColor: "$background-secondary-neutral",
+  borderRight: "1px solid $border-primary",
   padding: "$6 $4",
   position: "fixed",
   left: 0,
@@ -72,7 +72,7 @@ const StyledListHeader = styled("h4", {
   margin: 0,
   padding: "$2 $4",
   fontWeight: 400,
-  color: "$mauve10",
+  color: "$text-secondary",
 });
 export const SideNavList = forwardRef<HTMLUListElement, SidenavListProps>(
   ({ children, style, title }, ref) => {
@@ -118,19 +118,20 @@ const NavLink = styled("a", {
   borderRadius: "$2",
   fontWeight: "500",
   "&:hover": {
-    backgroundColor: "$mauve5",
-    boxShadow: "1px 1px 1px $colors$mauveA5",
+    backgroundColor: "$background-secondary-hover",
+    boxShadow: "1px 1px 1px $colors$shadow-default",
     svg: {
       color: "$mauve12",
     },
   },
   "&:focus-visible": {
-    boxShadow: "0 0 0 2px $colors$indigo8",
+    boxShadow:
+      "0 0 0 2px $colors$border-focus-base, 0 0 0 3px $colors$border-focus-additive",
   },
   variants: {
     state: {
       active: {
-        color: "$mauve12",
+        color: "$text-primary",
       },
       default: {},
     },

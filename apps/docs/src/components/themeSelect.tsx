@@ -7,15 +7,19 @@ import {
   Stack,
   StackDirection,
 } from "@pear-ui/core";
+
+import { useTheme } from "next-themes";
+
 const ColorBox = styled("div", {
   size: "$3",
   borderRadius: "$2",
   variants: {
     color: {
       default: {
-        background: "linear-gradient(100deg, $mauve12, $violet11)",
+        background:
+          "linear-gradient(100deg, $mauve12, $violet11)",
       },
-      oranje: {
+      orange: {
         background: "linear-gradient(100deg, $sand12, $orange11)",
       },
       grass: {
@@ -31,26 +35,42 @@ const ColorBox = styled("div", {
   },
 });
 export const ThemeSelector = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
-    <Select defaultValue={"default"}>
+    <Select
+      defaultValue={theme}
+      onValueChange={(value) => {
+        setTheme(value);
+      }}
+    >
       <SelectTriggerButton></SelectTriggerButton>
       <SelectContent>
-        <SelectItem value={"default"}>
+        <SelectItem value={"light"}>
           <Stack
             direction={StackDirection.horizontal}
             style={{ alignItems: "center" }}
           >
             <ColorBox color={"default"} />
-            Default
+            Purple
           </Stack>
         </SelectItem>
-        <SelectItem value={"oranje"}>
+        <SelectItem value={"dark"}>
           <Stack
             direction={StackDirection.horizontal}
             style={{ alignItems: "center" }}
           >
-            <ColorBox color={"oranje"} />
-            Oranje
+            <ColorBox color={"default"} />
+            Purple-Dark
+          </Stack>
+        </SelectItem>
+        <SelectItem value={"orange"}>
+          <Stack
+            direction={StackDirection.horizontal}
+            style={{ alignItems: "center" }}
+          >
+            <ColorBox color={"orange"} />
+            Orange
           </Stack>
         </SelectItem>
         <SelectItem value={"grass"}>
@@ -71,7 +91,7 @@ export const ThemeSelector = () => {
             Indigo
           </Stack>
         </SelectItem>
-        <SelectItem value={"Gold"}>
+        <SelectItem value={"gold"}>
           <Stack
             direction={StackDirection.horizontal}
             style={{ alignItems: "center" }}

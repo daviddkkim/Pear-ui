@@ -12,36 +12,36 @@ const StyledDropdownTriggerButton = styled(DropdownMenuPrimitive.Trigger, {
   transition: "all 150ms ease",
   borderRadius: "$2",
   boxSizing: "border-box",
-  border: "1px solid transparent",
   "&:focus-visible": {
-    boxShadow: "0 0 0 2px $colors$indigo8, 0 0 0 3px $colors$indigo9",
+    boxShadow:
+      "0 0 0 2px $colors$border-focus-base, 0 0 0 3px $colors$border-focus-additive",
   },
   variants: {
     color: {
       primary: {
-        background: "linear-gradient(120deg, $mauve12, $violet12)",
-        border: "1px solid $colors$violet6",
-        color: "$mauve1",
-        boxShadow: "1px 1px 1px $colors$mauveA4",
+        background: "$background-accent-neutral",
+        border: "1px solid $colors$border-accent",
+        color: "$text-contrast",
+        boxShadow: "1px 1px 1px $colors$shadow-default",
         "&:hover": {
-          background: "linear-gradient(120deg, $mauve12, $violet11)",
+          background: "$background-accent-hover",
         },
       },
       secondary: {
-        backgroundColor: "$mauve1",
-        border: "1px solid $colors$mauve10",
-        color: "$violet12",
-        boxShadow: "1px 1px 1px $colors$mauveA4",
+        backgroundColor: "$background-primary-neutral",
+        border: "1px solid $border-contrast",
+        color: "$text-accent",
+        boxShadow: "1px 1px 1px $colors$shadow-default",
         "&:hover": {
-          backgroundColor: "$mauve4",
+          backgroundColor: "$background-primary-hover",
         },
       },
       ghost: {
-        backgroundColor: "$inherit",
+        backgroundColor: "$background-ghost-neutral",
         border: "1px solid transparent",
-        color: "$violet12",
+        color: "$text-accent",
         "&:hover": {
-          backgroundColor: "$mauve4",
+          backgroundColor: "$background-ghost-hover",
         },
       },
     },
@@ -152,11 +152,12 @@ export interface DropdownMenuContentProps {
 }
 
 const StyledDropdownMenuContent = styled(DropdownMenuPrimitive.Content, {
-  border: "1px solid $mauve6",
-  background: "$mauve1",
+  border: "1px solid $border-primary",
+  background: "$background-primary-neutral",
   padding: "$3",
   borderRadius: "$2",
-  boxShadow: "1px 1px 10px $colors$mauveA5, 1px 1px 5px $colors$mauveA4",
+  boxShadow:
+    "1px 1px 10px $colors$shadow-default 1px 1px 5px $colors$shadow-secondary",
   display: "flex",
   flexDirection: "column",
   rowGap: "$2",
@@ -176,14 +177,14 @@ export const DropdownMenuContent = forwardRef<
 DropdownMenuContent.displayName = "DropdownMenuContent";
 
 const StyledSeparator = styled(DropdownMenuPrimitive.Separator, {
-  backgroundColor: "$mauve8",
+  backgroundColor: "$border-primary",
   height: "1px",
 });
 
 const StyledLabel = styled(DropdownMenuPrimitive.Label, {
   fontSize: "$3",
   margin: "0 $2",
-  color: "$mauve11",
+  color: "$text-secondary",
 });
 
 const StyledGroup = styled(DropdownMenuPrimitive.Group, {
@@ -196,9 +197,9 @@ const StyledItem = styled(DropdownMenuPrimitive.Item, {
   outline: "none",
   borderRadius: "$2",
   padding: "$1 $2",
-  "&:focus-visible": {
-    backgroundColor: "$violet3",
-    boxShadow: "1px 1px 1px $colors$mauveA5",
+  "&:focus": {
+    backgroundColor: "$background-mutedAccent",
+    boxShadow: "1px 1px 1px $colors$shadow-default",
   },
   "&:hover": {
     cursor: "pointer",

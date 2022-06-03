@@ -7,6 +7,7 @@ import {
   DialogClose,
   styled,
   Button,
+  ButtonGroup
 } from "@pear-ui/core";
 import {
   useView,
@@ -39,7 +40,7 @@ const Dialogs: NextPage = () => {
     props: {
       children: {
         value:
-          "<DialogTriggerButton> Click</DialogTriggerButton> <DialogContent headerSlot={<HeaderSlotContainer><DialogTitle>Title</DialogTitle><DialogClose>close</DialogClose></HeaderSlotContainer>}> <div>Content</div> <div style={{display:'flex', justifyContent: 'flex-end'}}><DialogClose asChild><Button> Save </Button></DialogClose></div> </DialogContent>",
+          "<DialogTriggerButton> Click</DialogTriggerButton> <DialogContent headerSlot={<HeaderSlotContainer><DialogTitle>Title</DialogTitle></HeaderSlotContainer>}> <div>Content</div> <div style={{display:'flex', justifyContent: 'flex-end'}}><ButtonGroup><DialogClose asChild><Button color='secondary'>Cancel</Button></DialogClose> <DialogClose asChild><Button> Save </Button></DialogClose></ButtonGroup></div> </DialogContent>",
         type: PropTypes.ReactNode,
         description: "Visible label.",
       },
@@ -52,6 +53,7 @@ const Dialogs: NextPage = () => {
       DialogTitle,
       HeaderSlotContainer,
       Button,
+      ButtonGroup
     },
     imports: {
       "@pear-ui/core": {
@@ -62,6 +64,7 @@ const Dialogs: NextPage = () => {
           "DialogClose",
           "DialogTitle",
           "Button",
+          "ButtonGroup"
         ],
       },
     },

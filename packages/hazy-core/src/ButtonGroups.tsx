@@ -24,7 +24,7 @@ const ButtonGroupContainer = styled("div", {
         },
         ":last-child": {
           borderRadius: "0 $2 $2 0",
-          borderRight: "1px solid $mauve10",
+          borderRight: "1px solid $border-contrast",
         },
       },
       small: {

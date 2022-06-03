@@ -40,6 +40,7 @@ const Buttons: NextPage = () => {
         type: PropTypes.Function,
         description: "Function called when button is clicked.",
       },
+
       disabled: {
         value: false,
         type: PropTypes.Boolean,

@@ -1,8 +1,16 @@
-import { styled } from "@pear-ui/core";
+import {
+  darkTheme,
+  orangeTheme,
+  indigoTheme,
+  grassTheme,
+  goldTheme,
+  styled,
+} from "@pear-ui/core";
 import { SideNavBar } from "../components/sideNavBar";
 import { globalCss } from "@pear-ui/core";
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
+import { ThemeProvider } from "next-themes";
 
 const globalStyles = globalCss({
   html: {
@@ -60,12 +68,26 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <Container>
-      <SideNavBar></SideNavBar>
-      <Box>
-        <Component {...pageProps} />
-      </Box>
-    </Container>
+    <ThemeProvider
+      disableTransitionOnChange
+      attribute="class"
+      value={{
+        light: "light-theme",
+        dark: darkTheme.className,
+        orange: orangeTheme.className,
+        gold: goldTheme.className,
+        grass: grassTheme.className,
+        indigo: indigoTheme.className,
+      }}
+      defaultTheme="light"
+    >
+      <Container>
+        <SideNavBar></SideNavBar>
+        <Box>
+          <Component {...pageProps} />
+        </Box>
+      </Container>
+    </ThemeProvider>
   );
 }
 export default MyApp;

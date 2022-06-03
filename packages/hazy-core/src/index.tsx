@@ -1,6 +1,15 @@
 import * as React from "react";
 export { Button, type ButtonProps } from "./Button";
-export { styled, globalCss, darkTheme, keyframes } from "../stitches.config";
+export {
+  styled,
+  globalCss,
+  darkTheme,
+  keyframes,
+  orangeTheme,
+  grassTheme,
+  indigoTheme,
+  goldTheme,
+} from "../stitches.config";
 export {
   ButtonSize,
   ButtonColor,
