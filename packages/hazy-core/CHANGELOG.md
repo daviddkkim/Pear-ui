@@ -1,5 +1,11 @@
 # @pear-ui/core
 
+## 1.4.0
+
+### Minor Changes
+
+- 91173d2: Added themes to design tokens as well as a dropdown component
+
 ## 1.3.0
 
 ### Minor Changes
