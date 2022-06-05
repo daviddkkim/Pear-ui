@@ -26,8 +26,10 @@ const ColoredBox = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  size: "62px",
-  backgroundColor: "$pink6",
+  padding: '$4',
+  borderRadius: '$2',
+  backgroundColor: "$background-accent-neutral",
+  color: '$text-contrast',
 });
 
 const Container = styled("div", {
